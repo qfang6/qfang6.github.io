@@ -12,18 +12,18 @@
 
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
-minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal_mistakes_skin    : "contrast" # "default" "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Site Title"
+title                    : "Qi's ReadMe"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
-baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+name                     : "Qi Fang"
+description              : "Qi Fang's Personal Blog"
+url                      : "https://qfang6.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+baseurl                  : "" # the subpath of your site, e.g. "/blog"
+repository               : "qfang6/qfang6.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
 masthead_title           : # overrides the website title displayed in the masthead, use " " for no title
@@ -46,14 +46,16 @@ comments:
   staticman:
     branch               : # "master"
     endpoint             : # "https://{your Staticman v3 API}/v3/entry/github/"
+# staticman (comments) configuration
+staticman_url: https://staticman-qfang6.herokuapp.com/v2/entry/qfang6/qfang6.github.io/master/comments
 reCaptcha:
-  siteKey                :
-  secret                 :
+  siteKey                : 6Lcn9PYUAAAAAB1_AQFZvX8ikjpXWqG5NiBO5giQ
+  secret                 : jQuvmoshNH+FDtYz3vswBJ7wDFI07h4w8nGIpJW/kee/uO18V6tOFkSf4CWDRh/mneYGpdg1dYg7fRe7OxTA2xY8lx7EK010DMXm66FQA9zxNW3QJp40h79dmsRwh8K1YHbEiBVIHOTrA6lbT+WTc/WNBOFPlUmh1sIs/V7/CZ1QBxyjuvmLmTowhrzDN6Yx8Yekb7q8i42iEt287xt0axfkvzbEa/Q8dShLW80IwfGo01TS7ab0BYQJuNYl5u9IDMKnqEbl1UCDWOcL5YvlX6LFr3xNhs5wDWgaBI+4MrbHNGJRMFQRKOTWLKyRnbckgiQ+HoaTssbJbTxpCdp33IxjWixe3PJOV4qzdnFNr64GWUgYgk2XItBGM9C+fM+tnsZaXDSKHtGQEXshB3Czu8dbF9hUQ02l0U3aMzwBVE8U7t46XhV5MhbVMX2E6D+kE1f3AtYQ+nOPiMi3PgBoEVKl0M8LiQ/YQVWPa9VpsSLPfjb2puwF8gh5opOVx+7VQXsY/gaAT7TYitAuZd6Giy5MvSxak981pIFP4G3AqTaJsCATzl4tOngoRwVY8Dy1kCEnR/tksN6b73ZF994BZ8W4pISmjbCjencdUiMpQ0BRNFiyeCQ5OdUgTy1S5o8pw4tn7yn2qcW82A1hvzyY6VFiTwNAxa4jQSz6MA38mBU=
 atom_feed:
   path                   : # blank (default) uses feed.xml
-search                   : # true, false (default)
+search                   : true # true, false (default)
 search_full_content      : # true, false (default)
-search_provider          : # lunr (default), algolia, google
+search_provider          : lunr # lunr (default), algolia, google
 algolia:
   application_id         : # YOUR_APPLICATION_ID
   index_name             : # YOUR_INDEX_NAME
@@ -63,7 +65,7 @@ google:
   search_engine_id       : # YOUR_SEARCH_ENGINE_ID
   instant_search         : # false (default), true
 # SEO Related
-google_site_verification :
+google_site_verification : "oiRSL76DHei_9NBSkDR-D0YpQG0hg5uyZXWHjhVYeQs"
 bing_site_verification   :
 yandex_site_verification :
 naver_site_verification  :
@@ -82,64 +84,40 @@ social:
   type                   : # Person or Organization (defaults to Person)
   name                   : # If the user or organization name differs from the site's name
   links: # An array of links to social media profiles
+    - "https://www.linkedin.com/in/qifang/"
 
 # Analytics
 analytics:
-  provider               : false # false (default), "google", "google-universal", "custom"
+  provider               : "google-universal" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          :
+    tracking_id          : "UA-165618726-1"
     anonymize_ip         : # true, false (default)
 
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
-  location         : "Somewhere"
+  name             : "Qi Fang"
+  avatar           : "/images/personal/qi_fang.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "NLP<br/>Machine Learning Engr.<br/>Self-Proclaimed-Musician"
+  location         : "Philadelphia, PA"
   email            :
   links:
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      # url: "mailto:your.name@email.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      # url: "https://your-website.com"
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url: "https://twitter.com/"
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url: "https://facebook.com/"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://github.com/qfang6"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/qifang/"
 
 # Site Footer
 footer:
   links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
-
+      url: "https://github.com/qfang6"
+    - label: "LinkedIn"
+      icon: "fab fa-linkedin"
+      url: "https://www.linkedin.com/in/qifang/"
 
 # Reading Files
 include:
@@ -209,7 +187,7 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: America/New_York # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
 # Plugins (previously gems:)
@@ -276,6 +254,12 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: # true
+      comments: true
       share: true
       related: true
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single

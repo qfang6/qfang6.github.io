@@ -2,35 +2,26 @@
 # different config blocks for different sections of your site.
 # For example, you can have one property to handle comment submission and
 # another one to handle posts.
-# To encrypt strings use the following endpoint:
-# https://api.staticman.net/v2/encrypt/{TEXT TO BE ENCRYPTED}
-
 comments:
   # (*) REQUIRED
   #
   # Names of the fields the form is allowed to submit. If a field that is
   # not here is part of the request, an error will be thrown.
-  allowedFields: ["name", "email", "url", "message"]
-
-  # (*) REQUIRED WHEN USING NOTIFICATIONS
-  #
-  # When allowedOrigins is defined, only requests sent from one of the domains
-  # listed will be accepted. The origin is sent as part as the `options` object
-  # (e.g. <input name="options[origin]" value="http://yourdomain.com/post1")
-  # allowedOrigins: ["yourdomain.com"]
+  allowedFields: ["name", "email", "url", "message", "replying_to_uid"]
 
   # (*) REQUIRED
   #
   # Name of the branch being used. Must match the one sent in the URL of the
   # request.
-  branch: "master"
+  branch: master
 
-  commitMessage: "New comment by {fields.name}"
+  # Text to use as the commit message or pull request title. Accepts placeholders.
+  commitMessage: "Comment from {fields.name} on {options.slug}"
 
   # (*) REQUIRED
   #
   # Destination path (filename) for the data files. Accepts placeholders.
-  filename: "comment-{@timestamp}"
+  filename: "entry{@timestamp}"
 
   # The format of the generated data files. Accepted values are "json", "yaml"
   # or "frontmatter"
@@ -42,63 +33,50 @@ comments:
   # to be used directly (e.g. a string, number or array)
   generatedFields:
     date:
-      type: "date"
+      type: date
       options:
-        format: "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+        format: "timestamp-seconds"
 
-  # Whether entries need to be approved before they are published to the main
+  # Whether entries need to be appproved before they are published to the main
   # branch. If set to `true`, a pull request will be created for your approval.
   # Otherwise, entries will be published to the main branch automatically.
   moderation: true
 
-  # Akismet spam detection.
-  # akismet:
-  #   enabled: true
-  #   author: "name"
-  #   authorEmail: "email"
-  #   authorUrl: "url"
-  #   content: "message"
-  #   type: "comment"
-
   # Name of the site. Used in notification emails.
-  # name: "Your Site"
+  name: "Qi's ReadMe"
 
   # Notification settings. When enabled, users can choose to receive notifications
   # via email when someone adds a reply or a new comment. This requires an account
   # with Mailgun, which you can get for free at http://mailgun.com.
-  # notifications:
+  #notifications:
     # Enable notifications
-    # enabled: true
+    #enabled: true
 
     # (!) ENCRYPTED
     #
     # Mailgun API key
-    # apiKey: ""
+    #apiKey: "1q2w3e4r"
 
     # (!) ENCRYPTED
     #
     # Mailgun domain (encrypted)
-    # domain: ""
+    #domain: "4r3e2w1q"
 
   # (*) REQUIRED
   #
   # Destination path (directory) for the data files. Accepts placeholders.
-  path: "docs/_data/comments/{options.slug}" # "_data/comments/{options.slug}" (default)
+  path: "_data/comments/{options.slug}"
 
-  # Names of required files. If any of these isn't in the request or is empty,
+  # Names of required fields. If any of these isn't in the request or is empty,
   # an error will be thrown.
-  requiredFields: ["name", "email", "message"]
+  requiredFields: ["name", "message"]
 
   # List of transformations to apply to any of the fields supplied. Keys are
   # the name of the field and values are possible transformation types.
   transforms:
     email: md5
 
-  # reCaptcha
-  # Register your domain at https://www.google.com/recaptcha/ and choose reCAPTCHA V2
   reCaptcha:
     enabled: true
-    siteKey: "6LdRBykTAAAAAFB46MnIu6ixuxwu9W1ihFF8G60Q"
-    # Encrypt reCaptcha secret key using Staticman /encrypt endpoint
-    # For more information, https://staticman.net/docs/encryption
-    secret: "PznnZGu3P6eTHRPLORniSq+J61YEf+A9zmColXDM5icqF49gbunH51B8+h+i2IvewpuxtA9TFoK68TuhUp/X3YKmmqhXasegHYabY50fqF9nJh9npWNhvITdkQHeaOqnFXUIwxfiEeUt49Yoa2waRR7a5LdRAP3SVM8hz0KIBT4="
+    siteKey: 6Lcn9PYUAAAAAB1_AQFZvX8ikjpXWqG5NiBO5giQ
+    secret: jQuvmoshNH+FDtYz3vswBJ7wDFI07h4w8nGIpJW/kee/uO18V6tOFkSf4CWDRh/mneYGpdg1dYg7fRe7OxTA2xY8lx7EK010DMXm66FQA9zxNW3QJp40h79dmsRwh8K1YHbEiBVIHOTrA6lbT+WTc/WNBOFPlUmh1sIs/V7/CZ1QBxyjuvmLmTowhrzDN6Yx8Yekb7q8i42iEt287xt0axfkvzbEa/Q8dShLW80IwfGo01TS7ab0BYQJuNYl5u9IDMKnqEbl1UCDWOcL5YvlX6LFr3xNhs5wDWgaBI+4MrbHNGJRMFQRKOTWLKyRnbckgiQ+HoaTssbJbTxpCdp33IxjWixe3PJOV4qzdnFNr64GWUgYgk2XItBGM9C+fM+tnsZaXDSKHtGQEXshB3Czu8dbF9hUQ02l0U3aMzwBVE8U7t46XhV5MhbVMX2E6D+kE1f3AtYQ+nOPiMi3PgBoEVKl0M8LiQ/YQVWPa9VpsSLPfjb2puwF8gh5opOVx+7VQXsY/gaAT7TYitAuZd6Giy5MvSxak981pIFP4G3AqTaJsCATzl4tOngoRwVY8Dy1kCEnR/tksN6b73ZF994BZ8W4pISmjbCjencdUiMpQ0BRNFiyeCQ5OdUgTy1S5o8pw4tn7yn2qcW82A1hvzyY6VFiTwNAxa4jQSz6MA38mBU=
