@@ -18,8 +18,8 @@
       data: $(this).serialize(),
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
-        showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.');
-
+        // showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.');
+        alert('Comment submitted<br>Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.');
         $("#comment-form-submit")
           .html("Submit");
 
@@ -30,7 +30,8 @@
       error: function (err) {
         console.log(err);
         var ecode = (err.responseJSON || {}).errorCode || "unknown";
-        showModal('Error', 'An error occured.<br>[' + ecode + ']');
+        // showModal('Error', 'An error occured.<br>[' + ecode + ']');
+        alert('Error<br>An error occured.<br>[' + ecode + ']');
         $("#comment-form-submit").html("Submit")
         $(form).removeClass('disabled');
         grecaptcha.reset();
@@ -39,15 +40,15 @@
     return false;
   });
 
-  $('.js-close-modal').click(function () {
-    $('body').removeClass('show-modal');
-  });
+  // $('.js-close-modal').click(function () {
+  //   $('body').removeClass('show-modal');
+  // });
 
-  function showModal(title, message) {
-    $('.js-modal-title').text(title);
-    $('.js-modal-text').html(message);
-    $('body').addClass('show-modal');
-  }
+  // function showModal(title, message) {
+  //   $('.js-modal-title').text(title);
+  //   $('.js-modal-text').html(message);
+  //   $('body').addClass('show-modal');
+  // }
 })(jQuery);
 
 // Staticman comment replies, from https://github.com/mmistakes/made-mistakes-jekyll
