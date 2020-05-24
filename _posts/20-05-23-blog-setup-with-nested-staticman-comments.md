@@ -21,7 +21,7 @@ Hopefully these resources will help you start on your own blog on Github.
 
 [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/)<br/>
 [Travis Downs](https://travisdowns.github.io/)<br/>
-[Staticman](https://staticman.net/)
+[Staticman](https://staticman.net/)<br/>
 [Sweetalert2](https://github.com/sweetalert2/sweetalert2)
 
 {% if page.comments == true %}

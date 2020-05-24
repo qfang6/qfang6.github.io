@@ -21,7 +21,7 @@
         // showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.');
         Swal.fire(
           'Comment submitted',
-          'Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.'
+          'Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>.\nIt will appear when approved.'
         )
         $("#comment-form-submit")
           .html("Submit");
