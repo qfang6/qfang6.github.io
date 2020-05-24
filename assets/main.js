@@ -19,7 +19,7 @@
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
         // showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.');
-        alert('Comment submitted<br>Thanks! Your comment is <a href="https://github.com/qfang6/qfang6.github.io/pulls">pending</a>. It will appear when approved.');
+        alert('Comment submitted\nThanks! Your comment is pending at\nhttps://github.com/qfang6/qfang6.github.io/pulls\n It will appear when approved.');
         $("#comment-form-submit")
           .html("Submit");
 
@@ -31,7 +31,7 @@
         console.log(err);
         var ecode = (err.responseJSON || {}).errorCode || "unknown";
         // showModal('Error', 'An error occured.<br>[' + ecode + ']');
-        alert('Error<br>An error occured.<br>[' + ecode + ']');
+        alert('Error\nAn error occured.\n[' + ecode + ']');
         $("#comment-form-submit").html("Submit")
         $(form).removeClass('disabled');
         grecaptcha.reset();
