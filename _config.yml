@@ -98,7 +98,7 @@ analytics:
 author:
   name             : "Qi Fang"
   avatar           : "/images/personal/qi_fang.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "NLP<br/>Machine Learning Engr.<br/>Self-Proclaimed-Musician"
+  bio              : "NLP<br>Machine Learning Engr.<br>Self-Proclaimed-Musician"
   location         : "Philadelphia, PA"
   email            :
   links:
